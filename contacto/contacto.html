@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinelandia - Contacto</title>
+    <!-- Font Awesome: librería de íconos -->
+    <!--<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" -->
+    <script src="https://kit.fontawesome.com/3f798b4688.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Estilos específicos de la página de contacto -->
+    <link rel="stylesheet" href="contacto.css">
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <!-- Barra de navegación fija en la parte superior -->
+    <header class="header">
+        <a href="#">
+            <img src="/img/logo_cinelandia.png" class="logo" alt="Logo Talento Tech" width="40px" height="40px">
+        </a>
+        <div>
+            <ul id="navbar" class="navbar">
+                <li><a href="/Pre-entrega-Front/">Home</a></li>
+                <li><a href="/Pre-entrega-Front/buscador/buscador.html">Buscador</a></li>
+                <li><a href="/Pre-entrega-Front/pelis/pelis.html">Pelis</a></li>
+                <li><a href="/Pre-entrega-Front/series/series.html">Series</a></li>
+                <li><a href="/Pre-entrega-Front/noticias/noticias.html">Noticias</a></li>
+                <li><a href="/Pre-entrega-Front/contacto/contacto.html">Contacto</a></li>
+                 <!-- Botón para cerrar el menú en versión mobile -->
+                <a href="#" id="close" class="close">
+                    <i class="far fa-times" aria-hidden="true"></i>
+                </a>
+            </ul>>
+        </div>
+        <!-- Versión mobile: ícono hamburguesa -->
+        <div class="mobile">
+            <a href="pages/carrito.html">
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+            </a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ==================== FORMULARIO DE CONTACTO ==================== -->
+        <!-- Sección principal con el formulario y datos del equipo -->
+        <!-- El formulario usa Formspree para el envío real de datos -->
+        <section class="form-details">
+
+            <!-- Formulario conectado a Formspree -->
+            <!-- Reemplazar TU_ID_FORMSPREE con el ID obtenido en formspree.io -->
+            <form action="https://formspree.io/f/TU_ID_FORMSPREE" method="POST" id="formularioContacto">
+                <span>DEJA UN MENSAJE</span>
+                <h2>Queremos saber de vos</h2>
+
+                <!-- Campo: Nombre -->
+                <div class="campo-control">
+                    <input type="text" id="tuNombre" name="nombre" placeholder="Tu Nombre">
+                    <div class="texto-error"></div>
+                </div>
+
+                <!-- Campo: Correo electrónico -->
+                <div class="campo-control">
+                    <input type="text" id="tuCorreo" name="correo" placeholder="Correo electrónico">
+                    <div class="texto-error"></div>
+                </div>
+
+                <!-- Campo: Asunto -->
+                <div class="campo-control">
+                    <input type="text" id="asunto" name="asunto" placeholder="Asunto">
+                    <div class="texto-error"></div>
+                </div>
+
+                <!-- Campo: Mensaje -->
+                <div class="campo-control">
+                    <textarea id="tuMensaje" name="mensaje" cols="30" rows="10" placeholder="Tu mensaje"></textarea>
+                    <div class="texto-error"></div>
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>
+
+            <!-- Información del equipo de contacto -->
+            <div class="people">
+                <div>
+                    <img src="../img/people/Cholito77.png" alt="Miguel Pavón">
+                    <p>
+                        <span>Miguel Pavón</span>
+                        Diseñador Gráfico <br>
+                        Teléfono: (011) xxxx-xxxx <br>
+                        Correo: miguel.pavon.001@gmail.com
+                    </p>
+                </div>
+                <div>
+                    <img src="../img/people/DamianMovies.png" alt="Diego Pérez">
+                    <p>
+                        <span>Diego Pérez</span>
+                        Gerente Senior de Marketing <br>
+                        Teléfono: (011) xxx-xxxx <br>
+                        Correo: contact.diego@example.com
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ==================== NEWSLETTER ==================== -->
+        <!-- Sección de suscripción por email - igual que en home -->
+        <section class="newsletter section-p1 section-m1">
+            <div class="newstext">
+                <h4>Suscribite al Newsletter</h4>
+                <p>Recibí novedades de nuestra tienda y <span>ofertas exclusivas</span></p>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="Tu correo electrónico">
+                <button>Suscribirme</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <!-- Mismo footer que en index.html -->
+        <!-- ==================== FOOTER ==================== -->
+    <!-- Pie de página con información de contacto y enlaces -->
+    <footer class="section-p1">
+        <div class="col">
+            <h4>Contacto</h4>
+            <p><strong>Teléfono:</strong> +54 11 8765</p>
+            <div class="follow">
+                <h4>Seguinos</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>Mi Cuenta</h4>
+            <a href="#">Iniciar Sesión</a>
+            <a href="#">Mis Favoritos</a>
+            <a href="#">Ayuda</a>
+        </div>
+        <div class="col install">
+            <h4>Descargá la App</h4>
+            <p>Desde App Store o Google Play</p>
+            <div class="row">
+                <img src="../img/pay/app.jpg" alt="App Store">
+                <img src="../img/pay/play.jpg" alt="Google Play">
+            </div>
+            
+        </div>
+        <div class="copyright">
+            <p>@2026 MP sites</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
