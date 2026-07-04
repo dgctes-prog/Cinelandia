@@ -10,6 +10,32 @@ buscador();
 
 });
 
+const boton=document.getElementById("darkModeBtn");
+
+const modoGuardado= localStorage.getItem("modo");
+
+if(modoGuardado==="dark"){
+
+document.body.classList.add("dark");
+
+}
+
+boton.addEventListener("click",()=>{
+
+document.body.classList.toggle("dark");
+
+if(document.body.classList.contains("dark")){
+
+localStorage.setItem("modo","dark");
+
+}else{
+
+localStorage.setItem("modo","light");
+
+}
+
+});
+
 // ===================== FORMULARIO CONTACTO ====================
 
 document.addEventListener("DOMContentLoaded", () => {
