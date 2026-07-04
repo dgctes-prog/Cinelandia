@@ -8,6 +8,7 @@
     <title>Cinelandia - Contacto</title>
     <!-- Font Awesome: librería de íconos -->
     <!--<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" -->
+    <script src="/Cinelandia/js/script.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <!-- Estilos específicos de la página de contacto -->
     <link rel="stylesheet" href="contacto.css">
@@ -18,17 +19,21 @@
     <!-- ==================== HEADER ==================== -->
     <!-- Barra de navegación fija en la parte superior -->
     <header class="header">
-        <a href="../index.html">
-            <img src="../img/logo_cinelandia.png" class="logo" alt="Logo Cinelandia" width="40px" height="40px">
+        <a href="#">
+            <img src="/img/logo_cinelandia.png" class="logo" alt="Logo Talento Tech" width="40px" height="40px">
         </a>
         <div>
-            <ul id="navbar" class="navbar">
-              <li><a href="../index.html">Home</a></li>
-              <li><a href="../buscador/buscador.html">Buscador</a></li>
-              <li><a href="../pelis/pelis.html">Pelis</a></li>
-              <li><a href="../series/series.html">Series</a></li>
-              <li><a href="../noticias/noticias.html">Noticias</a></li>
-              <li><a href="contacto.html">Contacto</a></li>
+             <ul id="navbar" class="navbar">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="/buscador/buscador.html">Buscador</a></li>
+                <li><a href="/pelis/pelis.html">Pelis</a></li>
+                <li><a href="/series/series.html">Series</a></li>
+                <li><a href="/noticias/noticias.html">Noticias</a></li>
+                <li><a href="#">Contacto</a></li>
+                 <!-- Botón para cerrar el menú en versión mobile -->
+                <a href="#" id="close" class="close">
+                    <i class="far fa-times" aria-hidden="true"></i>
+                </a>
             </ul>
         </div>
         <!-- Versión mobile: ícono hamburguesa -->
@@ -45,45 +50,48 @@
         <!-- ==================== FORMULARIO DE CONTACTO ==================== -->
         <!-- Sección principal con el formulario y datos del equipo -->
         <!-- El formulario usa Formspree para el envío real de datos -->
-<form
-    id="contactoForm"
-    action="https://formspree.io/f/TU_ID_FORMSPREE"
-    method="POST"
->
+        <section class="form-details">
 
-    <span>DEJA UN MENSAJE</span>
-    <h2>Queremos saber de vos</h2>
+                    <!-- Formulario conectado a Formspree -->
+        <form
+            id="contactoForm"
+            action="https://formspree.io/f/mvzjdygn"
+            method="POST"
+        >
 
-    <input
-        type="text"
-        id="nombre"
-        name="nombre"
-        placeholder="Nombre"
-        required
-    >
+            <span>DEJA UN MENSAJE</span>
+            <h2>Queremos saber de vos</h2>
 
-    <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Correo electrónico"
-        required
-    >
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Nombre"
+                required
+            >
 
-    <textarea
-        id="mensaje"
-        name="mensaje"
-        placeholder="Escribí tu mensaje"
-        required
-    ></textarea>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Correo electrónico"
+                required
+            >
 
-    <button type="submit">
-        Enviar
-    </button>
+            <textarea
+                id="mensaje"
+                name="mensaje"
+                placeholder="Escribí tu mensaje"
+                required
+            ></textarea>
 
-    <p id="respuesta"></p>
+            <button type="submit">
+                Enviar
+            </button>
 
-</form>
+            <p id="respuesta"></p>
+
+        </form>     
 
             <!-- Información del equipo de contacto -->
             <div class="people">
@@ -162,7 +170,7 @@
             <p>@2026 MP sites</p>
         </div>
     </footer>
-    <script src="../js/script.js"></script>
+
 </body>
 
 </html>
