@@ -8,7 +8,7 @@
     <title>Cinelandia - Contacto</title>
     <!-- Font Awesome: librería de íconos -->
     <!--<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" -->
-    <script src="https://kit.fontawesome.com/3f798b4688.js" crossorigin="anonymous"></script>
+    <script src="/Cinelandia/js/script.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <!-- Estilos específicos de la página de contacto -->
     <link rel="stylesheet" href="contacto.css">
@@ -55,31 +55,38 @@
                 <h2>Queremos saber de vos</h2>
 
                 <!-- Campo: Nombre -->
-                <div class="campo-control">
-                    <input type="text" id="tuNombre" name="nombre" placeholder="Tu Nombre">
-                    <div class="texto-error"></div>
-                </div>
+                <form id="contactoForm">
 
-                <!-- Campo: Correo electrónico -->
-                <div class="campo-control">
-                    <input type="text" id="tuCorreo" name="correo" placeholder="Correo electrónico">
-                    <div class="texto-error"></div>
-                </div>
+                    <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Nombre"
+                    required
+                    >
 
-                <!-- Campo: Asunto -->
-                <div class="campo-control">
-                    <input type="text" id="asunto" name="asunto" placeholder="Asunto">
-                    <div class="texto-error"></div>
-                </div>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Correo electrónico"
+                        required
+                    >
 
-                <!-- Campo: Mensaje -->
-                <div class="campo-control">
-                    <textarea id="tuMensaje" name="mensaje" cols="30" rows="10" placeholder="Tu mensaje"></textarea>
-                    <div class="texto-error"></div>
-                </div>
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        placeholder="Escribí tu mensaje"
+                        required
+                    ></textarea>
 
-                <button type="submit">Enviar</button>
-            </form>
+                    <button type="submit">
+                        Enviar
+                    </button>
+
+                </form>
+
+                <p id="respuesta"></p>
 
             <!-- Información del equipo de contacto -->
             <div class="people">
