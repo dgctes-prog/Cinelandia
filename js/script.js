@@ -36,6 +36,32 @@ localStorage.setItem("modo","light");
 
 });
 
+const darkButton = document.getElementById("darkModeBtn");
+
+if (darkButton) {
+
+    // Recuperar preferencia guardada
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+        darkButton.textContent = "☀️";
+    }
+
+    darkButton.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark");
+
+        if (document.body.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+            darkButton.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            darkButton.textContent = "🌙";
+        }
+
+    });
+
+}
+
 // ===================== FORMULARIO CONTACTO ====================
 
 document.addEventListener("DOMContentLoaded", () => {
