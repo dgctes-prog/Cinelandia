@@ -215,7 +215,7 @@ footer .copyright {
     footer .copyright { margin-top: 20px; }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
     footer { flex-direction: column; }
     footer .col { width: 100%; margin-bottom: 30px; }
     footer .copyright { margin-top: 10px; font-size: 13px; }
@@ -251,4 +251,28 @@ footer .copyright {
         margin: 10px;
         padding: 20px 15px;
     }
+}
+
+/* ============================================================
+Mejoras  formulario
+=============================================================*/
+#respuesta{
+    margin-top:15px;
+    font-weight:bold;
+    min-height:24px;
+}
+
+#btnEnviar:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+}
+
+input:invalid,
+textarea:invalid{
+    border:1px solid #d93025;
+}
+
+input:valid,
+textarea:valid{
+    border:1px solid #0f9d58;
 }

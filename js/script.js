@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (response.ok) {
 
                 respuesta.textContent =
-                    "¡Muchas gracias! Tu mensaje fue enviado correctamente.";
+                    "✅ ¡Gracias! Tu mensaje fue enviado correctamente.";
 
                 respuesta.style.color = "#0f9d58";
 
