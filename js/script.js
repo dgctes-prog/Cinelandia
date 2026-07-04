@@ -1,4 +1,4 @@
-// ==================== FORMULARIO CONTACTO ====================
+// ===================== FORMULARIO CONTACTO ====================
 
 const formulario = document.getElementById("contactoForm");
 
