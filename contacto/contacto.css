@@ -99,6 +99,7 @@
 }
 
 
+
 /* ============================================================
    INFORMACIÓN DEL EQUIPO
    Columna derecha con foto y datos de cada contacto
@@ -227,7 +228,7 @@ footer .copyright {
    ============================================================ */
 
 /* Tablet */
-@media (max-width: 799px) {
+@media (max-width: 768px) {
     .form-details {
         padding: 40px;
         flex-direction: column;
@@ -245,7 +246,7 @@ footer .copyright {
 }
 
 /* Mobile */
-@media (max-width: 477px) {
+@media (max-width: 480px) {
     .form-details {
         margin: 10px;
         padding: 20px 15px;
