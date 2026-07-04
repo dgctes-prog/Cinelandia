@@ -8,7 +8,6 @@
     <title>Cinelandia - Contacto</title>
     <!-- Font Awesome: librería de íconos -->
     <!--<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" -->
-    <script src="/Cinelandia/js/script.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <!-- Estilos específicos de la página de contacto -->
     <link rel="stylesheet" href="contacto.css">
@@ -53,45 +52,50 @@
         <section class="form-details">
 
                     <!-- Formulario conectado a Formspree -->
-        <form
-            id="contactoForm"
-            action="https://formspree.io/f/mvzjdygn"
-            method="POST"
-        >
+                    <form id="contactoForm">
 
-            <span>DEJA UN MENSAJE</span>
-            <h2>Queremos saber de vos</h2>
+                        <span>DEJA UN MENSAJE</span>
+                        <h2>Queremos saber de vos</h2>
 
-            <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                placeholder="Nombre"
-                required
-            >
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Nombre completo"
+                            required
+                            minlength="3"
+                            maxlength="50"
+                        >
 
-            <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Correo electrónico"
-                required
-            >
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Correo electrónico"
+                            required
+                        >
 
-            <textarea
-                id="mensaje"
-                name="mensaje"
-                placeholder="Escribí tu mensaje"
-                required
-            ></textarea>
+                        <textarea
+                            id="mensaje"
+                            name="mensaje"
+                            placeholder="Escribí tu mensaje"
+                            rows="6"
+                            required
+                            minlength="10"
+                            maxlength="500"
+                        ></textarea>
 
-            <button type="submit">
-                Enviar
-            </button>
+                        <button
+                            type="submit"
+                            id="btnEnviar"
+                            class="normal"
+                        >
+                            Enviar mensaje
+                        </button>
 
-            <p id="respuesta"></p>
+                        <p id="respuesta"></p>
 
-        </form>     
+                    </form>     
 
             <!-- Información del equipo de contacto -->
             <div class="people">
@@ -170,7 +174,8 @@
             <p>@2026 MP sites</p>
         </div>
     </footer>
-
+    
+    <script src="/Cinelandia/js/script.js"></script>
 </body>
 
 </html>
