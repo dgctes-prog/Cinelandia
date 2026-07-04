@@ -8,7 +8,6 @@
     <title>Cinelandia - Contacto</title>
     <!-- Font Awesome: librería de íconos -->
     <!--<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" -->
-    <script src="../js/script.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <!-- Estilos específicos de la página de contacto -->
     <link rel="stylesheet" href="contacto.css">
@@ -46,47 +45,45 @@
         <!-- ==================== FORMULARIO DE CONTACTO ==================== -->
         <!-- Sección principal con el formulario y datos del equipo -->
         <!-- El formulario usa Formspree para el envío real de datos -->
-        <section class="form-details">
+<form
+    id="contactoForm"
+    action="https://formspree.io/f/TU_ID_FORMSPREE"
+    method="POST"
+>
 
-            <!-- Formulario conectado a Formspree -->
-            <!-- Reemplazar TU_ID_FORMSPREE con el ID obtenido en formspree.io -->
-            <form action="https://formspree.io/f/TU_ID_FORMSPREE" method="POST" id="formularioContacto">
-                <span>DEJA UN MENSAJE</span>
-                <h2>Queremos saber de vos</h2>
+    <span>DEJA UN MENSAJE</span>
+    <h2>Queremos saber de vos</h2>
 
-                <!-- Campo: Nombre -->
-                <form id="contactoForm">
+    <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder="Nombre"
+        required
+    >
 
-                    <input
-                    type="text"
-                    id="nombre"
-                    name="nombre"
-                    placeholder="Nombre"
-                    required
-                    >
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Correo electrónico"
+        required
+    >
 
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Correo electrónico"
-                        required
-                    >
+    <textarea
+        id="mensaje"
+        name="mensaje"
+        placeholder="Escribí tu mensaje"
+        required
+    ></textarea>
 
-                    <textarea
-                        id="mensaje"
-                        name="mensaje"
-                        placeholder="Escribí tu mensaje"
-                        required
-                    ></textarea>
+    <button type="submit">
+        Enviar
+    </button>
 
-                    <button type="submit">
-                        Enviar
-                    </button>
+    <p id="respuesta"></p>
 
-                </form>
-
-                <p id="respuesta"></p>
+</form>
 
             <!-- Información del equipo de contacto -->
             <div class="people">
@@ -165,7 +162,7 @@
             <p>@2026 MP sites</p>
         </div>
     </footer>
-
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
