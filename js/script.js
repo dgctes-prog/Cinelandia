@@ -1,60 +1,93 @@
 // ===================== FORMULARIO CONTACTO ====================
 
-const formulario = document.getElementById("contactoForm");
+document.addEventListener("DOMContentLoaded", () => {
 
-if(formulario){
+    const formulario = document.getElementById("contactoForm");
 
-    formulario.addEventListener("submit", async function(e){
+    if (!formulario) return;
+
+    const respuesta = document.getElementById("respuesta");
+    const boton = document.getElementById("btnEnviar");
+
+    formulario.addEventListener("submit", async (e) => {
 
         e.preventDefault();
 
-        const nombre = document.getElementById("nombre").value;
-        const email = document.getElementById("email").value;
-        const mensaje = document.getElementById("mensaje").value;
+        const nombre = document.getElementById("nombre").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const mensaje = document.getElementById("mensaje").value.trim();
 
-        const respuesta = document.getElementById("respuesta");
+        if (nombre.length < 3) {
+            mostrarError("Ingresá un nombre válido.");
+            return;
+        }
 
-        try{
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-            const envio = await fetch(
+        if (!regexEmail.test(email)) {
+            mostrarError("Ingresá un correo electrónico válido.");
+            return;
+        }
+
+        if (mensaje.length < 10) {
+            mostrarError("El mensaje debe tener al menos 10 caracteres.");
+            return;
+        }
+
+        boton.disabled = true;
+        boton.textContent = "Enviando...";
+
+        try {
+
+            const response = await fetch(
                 "https://formspree.io/f/mvzjdygn",
                 {
-                    method:"POST",
-                    headers:{
-                        "Content-Type":"application/json",
-                        "Accept":"application/json"
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
                     },
                     body: JSON.stringify({
-                        nombre:nombre,
-                        email:email,
-                        mensaje:mensaje
+                        nombre,
+                        email,
+                        mensaje
                     })
                 }
             );
 
-            if(envio.ok){
+            if (response.ok) {
 
-                respuesta.innerText =
-                "Mensaje enviado correctamente";
+                respuesta.textContent =
+                    "¡Muchas gracias! Tu mensaje fue enviado correctamente.";
+
+                respuesta.style.color = "#0f9d58";
 
                 formulario.reset();
 
-            }else{
+            } else {
 
-                respuesta.innerText =
-                "No se pudo enviar el mensaje";
+                mostrarError("No fue posible enviar el mensaje.");
 
             }
 
-        }catch(error){
+        } catch (error) {
 
-            respuesta.innerText =
-            "Error de conexión";
+            console.error(error);
 
-            console.log(error);
+            mostrarError("Error de conexión. Intentá nuevamente.");
 
         }
 
+        boton.disabled = false;
+        boton.textContent = "Enviar mensaje";
+
     });
 
-}
+    function mostrarError(texto) {
+
+        respuesta.textContent = texto;
+        respuesta.style.color = "#d93025";
+
+    }
+
+});
