@@ -1,3 +1,15 @@
+document.addEventListener("DOMContentLoaded",()=>{
+
+menuMobile();
+
+modoOscuro();
+
+contacto();
+
+buscador();
+
+});
+
 // ===================== FORMULARIO CONTACTO ====================
 
 document.addEventListener("DOMContentLoaded", () => {
