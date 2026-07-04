@@ -1,66 +1,53 @@
-document.addEventListener("DOMContentLoaded",()=>{
 
-menuMobile();
+document.addEventListener("DOMContentLoaded", () => {
 
-modoOscuro();
+    iniciarModoOscuro();
 
-contacto();
-
-buscador();
+    iniciarFormulario();
 
 });
 
-const boton=document.getElementById("darkModeBtn");
+function iniciarModoOscuro(){
 
-const modoGuardado= localStorage.getItem("modo");
+    const boton = document.getElementById("darkModeBtn");
 
-if(modoGuardado==="dark"){
+    if(!boton) return;
 
-document.body.classList.add("dark");
+    if(localStorage.getItem("theme")==="dark"){
 
-}
-
-boton.addEventListener("click",()=>{
-
-document.body.classList.toggle("dark");
-
-if(document.body.classList.contains("dark")){
-
-localStorage.setItem("modo","dark");
-
-}else{
-
-localStorage.setItem("modo","light");
-
-}
-
-});
-
-const darkButton = document.getElementById("darkModeBtn");
-
-if (darkButton) {
-
-    // Recuperar preferencia guardada
-    if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark");
-        darkButton.textContent = "☀️";
+
+        boton.textContent="☀️";
+
     }
 
-    darkButton.addEventListener("click", () => {
+    boton.addEventListener("click",()=>{
 
         document.body.classList.toggle("dark");
 
-        if (document.body.classList.contains("dark")) {
-            localStorage.setItem("theme", "dark");
-            darkButton.textContent = "☀️";
-        } else {
-            localStorage.setItem("theme", "light");
-            darkButton.textContent = "🌙";
+        if(document.body.classList.contains("dark")){
+
+            localStorage.setItem("theme","dark");
+
+            boton.textContent="☀️";
+
+        }else{
+
+            localStorage.setItem("theme","light");
+
+            boton.textContent="🌙";
+
         }
 
     });
 
 }
+
+function iniciarFormulario(){
+
+    const formulario=document.getElementById("contactoForm");
+
+    if(!formulario) return;
 
 // ===================== FORMULARIO CONTACTO ====================
 
@@ -155,3 +142,70 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+}
+
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+menuMobile();
+
+modoOscuro();
+
+contacto();
+
+buscador();
+
+});
+
+const boton=document.getElementById("darkModeBtn");
+
+const modoGuardado= localStorage.getItem("modo");
+
+if(modoGuardado==="dark"){
+
+document.body.classList.add("dark");
+
+}
+
+boton.addEventListener("click",()=>{
+
+document.body.classList.toggle("dark");
+
+if(document.body.classList.contains("dark")){
+
+localStorage.setItem("modo","dark");
+
+}else{
+
+localStorage.setItem("modo","light");
+
+}
+
+});
+
+const darkButton = document.getElementById("darkModeBtn");
+
+if (darkButton) {
+
+    // Recuperar preferencia guardada
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+        darkButton.textContent = "☀️";
+    }
+
+    darkButton.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark");
+
+        if (document.body.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+            darkButton.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            darkButton.textContent = "🌙";
+        }
+
+    });
+
+}
+
