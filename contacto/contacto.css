@@ -11,6 +11,11 @@
     --header: #ffffff;
 }
 
+.navbar a.active {
+    color:#088178;
+    border-bottom:2px solid #088178;
+}
+
 body.dark {
     --bg: #121212;
     --text: #f5f5f5;
