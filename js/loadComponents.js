@@ -38,3 +38,10 @@ link.classList.add("active");
 }
 
 });
+
+const basePath = window.location.hostname.includes("github.io")
+    ? "/Cinelandia"
+    : "";
+
+const headerUrl = `${basePath}/components/header.html`;
+const footerUrl = `${basePath}/components/footer.html`;
