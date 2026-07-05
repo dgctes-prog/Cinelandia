@@ -1,13 +1,14 @@
-
-async function cargarHeader() {
-    const contenedor = document.getElementById("header-container");
-    if (!contenedor) return;
-
-    const respuesta = await fetch("/Cinelandia/components/header.html");
-    contenedor.innerHTML = await respuesta.text();
+document.addEventListener("DOMContentLoaded", () => {
 
     iniciarModoOscuro();
-}
+
+    iniciarFormulario();
+
+});
+
+/*==============================
+=            DARK MODE         =
+==============================*/
 
 function iniciarModoOscuro(){
 
@@ -15,7 +16,9 @@ function iniciarModoOscuro(){
 
     if(!boton) return;
 
-    if(localStorage.getItem("theme")==="dark"){
+    const tema = localStorage.getItem("theme");
+
+    if(tema==="dark"){
 
         document.body.classList.add("dark");
 
@@ -45,169 +48,90 @@ function iniciarModoOscuro(){
 
 }
 
+/*==============================
+=          CONTACTO            =
+==============================*/
+
 function iniciarFormulario(){
 
     const formulario=document.getElementById("contactoForm");
 
     if(!formulario) return;
 
-// ===================== FORMULARIO CONTACTO ====================
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const formulario = document.getElementById("contactoForm");
-
-    if (!formulario) return;
-
-    const respuesta = document.getElementById("respuesta");
-    const boton = document.getElementById("btnEnviar");
-
-    formulario.addEventListener("submit", async (e) => {
+    formulario.addEventListener("submit",async(e)=>{
 
         e.preventDefault();
 
-        const nombre = document.getElementById("nombre").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const mensaje = document.getElementById("mensaje").value.trim();
+        const respuesta=document.getElementById("respuesta");
 
-        if (nombre.length < 3) {
-            mostrarError("Ingresá un nombre válido.");
-            return;
-        }
+        const boton=document.getElementById("btnEnviar");
 
-        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        boton.disabled=true;
 
-        if (!regexEmail.test(email)) {
-            mostrarError("Ingresá un correo electrónico válido.");
-            return;
-        }
+        boton.textContent="Enviando...";
 
-        if (mensaje.length < 10) {
-            mostrarError("El mensaje debe tener al menos 10 caracteres.");
-            return;
-        }
+        const datos={
 
-        boton.disabled = true;
-        boton.textContent = "Enviando...";
+            nombre:document.getElementById("nombre").value,
 
-        try {
+            email:document.getElementById("email").value,
 
-            const response = await fetch(
+            mensaje:document.getElementById("mensaje").value
+
+        };
+
+        try{
+
+            const envio=await fetch(
+
                 "https://formspree.io/f/mvzjdygn",
+
                 {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json"
+
+                    method:"POST",
+
+                    headers:{
+
+                        "Content-Type":"application/json",
+
+                        "Accept":"application/json"
+
                     },
-                    body: JSON.stringify({
-                        nombre,
-                        email,
-                        mensaje
-                    })
+
+                    body:JSON.stringify(datos)
+
                 }
+
             );
 
-            if (response.ok) {
+            if(envio.ok){
 
-                respuesta.textContent =
-                    "✅ ¡Gracias! Tu mensaje fue enviado correctamente.";
+                respuesta.style.color="green";
 
-                respuesta.style.color = "#0f9d58";
+                respuesta.innerHTML="Mensaje enviado correctamente.";
 
                 formulario.reset();
 
-            } else {
+            }else{
 
-                mostrarError("No fue posible enviar el mensaje.");
+                respuesta.style.color="red";
+
+                respuesta.innerHTML="No fue posible enviar el mensaje.";
 
             }
 
-        } catch (error) {
+        }catch(error){
 
-            console.error(error);
+            respuesta.style.color="red";
 
-            mostrarError("Error de conexión. Intentá nuevamente.");
+            respuesta.innerHTML="Error de conexión.";
 
         }
 
-        boton.disabled = false;
-        boton.textContent = "Enviar mensaje";
+        boton.disabled=false;
 
-    });
-
-    function mostrarError(texto) {
-
-        respuesta.textContent = texto;
-        respuesta.style.color = "#d93025";
-
-    }
-
-});
-}
-
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-menuMobile();
-
-modoOscuro();
-
-contacto();
-
-buscador();
-
-});
-
-const boton=document.getElementById("darkModeBtn");
-
-const modoGuardado= localStorage.getItem("modo");
-
-if(modoGuardado==="dark"){
-
-document.body.classList.add("dark");
-
-}
-
-boton.addEventListener("click",()=>{
-
-document.body.classList.toggle("dark");
-
-if(document.body.classList.contains("dark")){
-
-localStorage.setItem("modo","dark");
-
-}else{
-
-localStorage.setItem("modo","light");
-
-}
-
-});
-
-const darkButton = document.getElementById("darkModeBtn");
-
-if (darkButton) {
-
-    // Recuperar preferencia guardada
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark");
-        darkButton.textContent = "☀️";
-    }
-
-    darkButton.addEventListener("click", () => {
-
-        document.body.classList.toggle("dark");
-
-        if (document.body.classList.contains("dark")) {
-            localStorage.setItem("theme", "dark");
-            darkButton.textContent = "☀️";
-        } else {
-            localStorage.setItem("theme", "light");
-            darkButton.textContent = "🌙";
-        }
+        boton.textContent="Enviar";
 
     });
 
 }
-
