@@ -1,11 +1,13 @@
 
-document.addEventListener("DOMContentLoaded", () => {
+async function cargarHeader() {
+    const contenedor = document.getElementById("header-container");
+    if (!contenedor) return;
+
+    const respuesta = await fetch("/Cinelandia/components/header.html");
+    contenedor.innerHTML = await respuesta.text();
 
     iniciarModoOscuro();
-
-    iniciarFormulario();
-
-});
+}
 
 function iniciarModoOscuro(){
 
