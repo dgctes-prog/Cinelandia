@@ -19,7 +19,31 @@
 
 <body>
 
-    <div id="header-container"></div>
+    <!-- ==================== HEADER ==================== -->
+    <!-- Barra de navegación fija en la parte superior -->
+    <header class="header">
+        <a href="index.html">
+            <img src="img/logo_cinelandia.png" class="logo" alt="Logo Cinelandia" width="40px" height="40px">
+        </a>
+        <div>
+            <ul id="navbar" class="navbar">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="buscador/buscador.html">Buscador</a></li>
+              <li><a href="pelis/pelis.html">Pelis</a></li>
+              <li><a href="series/series.html">Series</a></li>
+              <li><a href="noticias/noticias.html">Noticias</a></li>
+              <li><a href="contacto/contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+            <button id="darkModeBtn" class="dark-btn" aria-label="Modo oscuro">🌙</button>
+        <!-- Versión mobile: ícono hamburguesa -->
+        <div class="mobile">
+            <a href="pages/carrito.html">
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+            </a>
+            <i id="bar" class="fas fa-bars"></i>
+        </div>
+    </header>
 
     <main>
 
@@ -63,10 +87,8 @@
                         ></textarea>
 
                         <button
-                            type="submit"
                             id="btnEnviar"
-                            class="normal"
-                        >
+                            type="submit">
                             Enviar mensaje
                         </button>
 

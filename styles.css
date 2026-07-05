@@ -8,15 +8,11 @@
 
 :root{
 
-    --bg:#ffffff;
-
     --text:#222;
 
     --header:#ffffff;
 
     --card:#ffffff;
-
-    --newsletter:#041e42;
 
 }
 
@@ -44,8 +40,9 @@
 }
 
 body{
-    background:var(--bg);
-    color:var(--text);
+width:100%;
+background:var(--bg);
+color:var(--text);
 }
 .header{
     background:var(--header);
@@ -71,18 +68,18 @@ html {
 h1 {
     font-size: 50px;
     line-height: 64px;
-    color: #222;
+    color: var(--text);
 }
 
 h2 {
     font-size: 36px;
     line-height: 54px;
-    color: #222;
+    color: var(--text);
 }
 
 h4 {
     font-size: 20px;
-    color: #222;
+    color: var(--text);
 }
 
 h6 {
@@ -92,12 +89,8 @@ h6 {
 
 p {
     font-size: 16px;
-    color: #465b52;
+    color: var(--text);
     margin: 15px 0 20px 0;
-}
-
-body {
-    width: 100%;
 }
 
 
@@ -126,7 +119,6 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 20px 80px;
-    background-color: #000000;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     /* El header queda fijo en la parte superior al hacer scroll */
     z-index: 999;
@@ -230,7 +222,7 @@ body {
    ============================================================ */
 
 .hero {
-    background-image: url('../img/hero_banner_image.png');
+    background-image: url('img/hero_banner_image.png');
     display: flex;
     align-items: center;
     justify-content: flex-end;
