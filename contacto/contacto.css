@@ -195,6 +195,15 @@ body.dark .newsletter{
     color: #000;
 }
 
+/* ===============================
+   MODO OSCURO - CONTACTO
+================================ */
+
+body.dark .people p,
+body.dark .people p span{
+    color:#ffffff;
+}
+
 /* ============================================================
    FOOTER
    Pie de página con columnas de información
