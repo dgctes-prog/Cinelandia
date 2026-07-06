@@ -148,7 +148,7 @@ p {
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
-    color: #ffffff;
+    color:var(--header-text);
     transition: 0.3s ease;
 }
 
@@ -844,12 +844,6 @@ body.dark .form-details{
 }
 
 body.dark a{
-
-    color:white;
-
-}
-
-body.dark .navbar li a{
 
     color:white;
 
