@@ -41,7 +41,7 @@ Cinelandia/
 | `/`         | Archivos principales del sitio, index, css y readme|
 
 
-## 🚀 Deploy en GitHub Pages
+## Deploy en GitHub Pages
 
 El sitio está publicado mediante GitHub Pages:
 
