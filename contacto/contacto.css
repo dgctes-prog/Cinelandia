@@ -199,9 +199,13 @@ body.dark .newsletter{
    MODO OSCURO - CONTACTO
 ================================ */
 
-body.dark .people p,
-body.dark .people p span{
-    color:#ffffff;
+.people p{
+    color:var(--contact-text);
+}
+
+.people p span{
+    color:var(--contact-name);
+    font-weight:700;
 }
 
 /* ============================================================

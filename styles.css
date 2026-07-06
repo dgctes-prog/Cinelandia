@@ -25,6 +25,8 @@
     --primary: #088178;
     --accent: #ad9112;
     --border: #dcdcdc;
+    --contact-name:#000000;
+    --contact-text:#555555;
 }
 
 body.dark {
@@ -36,6 +38,8 @@ body.dark {
     --primary: #26a69a;
     --accent: #d4af37;
     --border: #444444;
+    --contact-name:#ffffff;
+    --contact-text:#d0d0d0;
 }
 
 
