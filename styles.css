@@ -517,6 +517,22 @@ p {
     color: #fff;
 }
 
+.btn-noticias{
+
+    display:inline-block;
+    padding:12px 25px;
+    background:#ad9112;
+    color:#fff;
+    text-decoration:none;
+    border-radius:5px;
+    transition:.3s;
+    font-weight:600;
+}
+
+.btn-noticias:hover{
+    background:#8a7502;
+}
+
 /* Responsive Banner */
 @media (max-width: 1200px) {
     .banner { padding: 0 60px; }
