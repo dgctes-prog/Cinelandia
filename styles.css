@@ -10,6 +10,7 @@
     --bg: #ffffff;
     --surface: #f8f9fa;
     --header: #ffffff;
+    --header-text:#222;
     --text: #222222;
     --text-secondary: #555555;
     --primary: #088178;
@@ -23,6 +24,7 @@ body.dark {
     --bg: #121212;
     --surface: #1e1e1e;
     --header: #1b1b1b;
+    --header-text:#ffffff;
     --text: #f4f4f4;
     --text-secondary: #c0c0c0;
     --primary: #26a69a;
