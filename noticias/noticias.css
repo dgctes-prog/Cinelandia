@@ -17,6 +17,7 @@
     --border: #dcdcdc;
     --contact-name:#000000;
     --contact-text:#555555;
+    --card:white;
 }
 
 body.dark {
@@ -30,6 +31,7 @@ body.dark {
     --border: #444444;
     --contact-name:#ffffff;
     --contact-text:#d0d0d0;
+    --card:#1f1f1f;
 }
 
 
@@ -336,132 +338,61 @@ p {
     .hero .hero-content button { padding: 10px 20px; font-size: 0.9rem; }
 }
 
-
 /* ============================================================
-   SECCIÓN PRODUCTOS
-   Grilla de cards con imagen, descripción y precio
-   Usa Flexbox para distribuir los productos
+   SECCIÓN DE NOTICIAS
+   Contenedor de noticias con tarjetas y scroll horizontal
    ============================================================ */
 
-.section-productos {
-    text-align: center;
+.news{
+    margin-top:60px;
 }
 
-/* Contenedor Flexbox de las cards */
-.section-productos .productos-container {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 20px;
-    flex-wrap: wrap;
+.news h2{
+    margin-bottom:30px;
 }
 
-/* Card individual de producto */
-.section-productos .productos-container .producto {
-    width: 23%;
-    min-width: 250px;
-    margin: 15px 0;
-    padding: 10px 12px;
-    border-radius: 20px;
-    border: 1px solid #cce7d0;
-    cursor: pointer;
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
-    transition: 0.8s ease;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+.news-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
 }
 
-.section-productos .productos-container .producto img {
-    width: 100%;
-    border-radius: 20px;
-    height: 250px;
-    object-fit: contain;
-    display: block;
+.news-card{
+    background:var(--card);
+    border-radius:12px;
+    overflow:hidden;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
 }
 
-/* Descripción dentro de la card */
-.section-productos .productos-container .producto .producto-descripcion {
-    text-align: start;
-    padding: 10px 0;
-    min-height: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-grow: 1;
+.news-card:hover{
+    transform:translateY(-6px);
 }
 
-.section-productos .productos-container .producto .producto-descripcion span {
-    color: #606063;
-    font-size: 12px;
+.news-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
 }
 
-.section-productos .productos-container .producto .producto-descripcion h5 {
-    padding-top: 7px;
-    color: #1a1a1a;
-    font-size: 16px;
+.news-info{
+    padding:20px;
 }
 
-/* Precio del producto */
-.section-productos .productos-container .producto .producto-descripcion h4 {
-    padding-top: 7px;
-    font-size: 18px;
-    font-weight: 700;
-    color: #ad9112;
-    margin-top: auto;
+.news-info h3{
+    margin:10px 0;
 }
 
-/* Efecto hover en la card */
-.section-productos .productos-container .producto:hover {
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.15);
+.news-info p{
+    line-height:1.5;
 }
 
-/* Botón agregar al carrito */
-.section-productos .productos-container .producto .carrito {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 10px 0;
-    margin-top: 8px;
-    border-radius: 8px;
-    background-color: #ada26f;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 600;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    transition: background-color 0.3s ease;
+.news-info a{
+    display:inline-block;
+    margin-top:15px;
+    color:#088178;
+    font-weight:bold;
 }
-
-.section-productos .productos-container .producto .carrito:hover {
-    background-color: #867a45;
-}
-
-/* Responsive Productos */
-@media (max-width: 1200px) {
-    .section-productos .productos-container { justify-content: space-around; }
-    .section-productos .productos-container .producto { margin: 15px 10px; }
-}
-
-@media (max-width: 992px) {
-    .section-productos h2 { font-size: 1.8rem; }
-    .section-productos p { font-size: 0.9rem; }
-    .section-productos .productos-container .producto { width: 30%; min-width: 220px; }
-}
-
-@media (max-width: 768px) {
-    .section-productos .productos-container .producto { width: 45%; min-width: 200px; }
-    .section-productos .productos-container { justify-content: space-between; }
-}
-
-@media (max-width: 576px) {
-    .section-productos { padding: 20px 10px; }
-    .section-productos h2 { font-size: 1.5rem; }
-    .section-productos .productos-container .producto { width: 100%; min-width: unset; margin: 10px 0; }
-    .section-productos .productos-container .producto .producto-descripcion h5 { font-size: 13px; }
-}
-
 
 /* ============================================================
    BANNER
@@ -710,112 +641,6 @@ footer .copyright {
 }
 
 
-/* ============================================================
-   SECCIÓN RESEÑAS
-   Opiniones de clientes usando CSS Grid de 3 columnas
-   ============================================================ */
-
-.section-resenias {
-    text-align: center;
-    background-color: #f8faf9;
-}
-
-.section-resenias h2 {
-    font-size: 36px;
-    color: #222;
-}
-
-.section-resenias > p {
-    color: #465b52;
-    margin-bottom: 30px;
-}
-
-/* Grid de 3 columnas para las cards */
-.resenias-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding-top: 20px;
-}
-
-/* Card individual de reseña */
-.resenia-card {
-    background-color: #fff;
-    border: 1px solid #cce7d0;
-    border-radius: 20px;
-    padding: 30px 25px;
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
-    transition: 0.3s ease;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.resenia-card:hover {
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
-    transform: translateY(-4px);
-}
-
-/* Estrellas de calificación */
-.resenia-estrellas i {
-    color: #f5a623;
-    font-size: 14px;
-}
-
-.resenia-card > p {
-    font-size: 14px;
-    color: #353535;
-    line-height: 1.7;
-    margin: 0;
-    flex-grow: 1;
-}
-
-/* Datos del autor de la reseña */
-.resenia-autor {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border-top: 1px solid #e8f5e9;
-    padding-top: 15px;
-    margin-top: auto;
-}
-
-.resenia-autor img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #cce7d0;
-}
-
-.resenia-autor h5 {
-    font-size: 14px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin: 0;
-}
-
-.resenia-autor span {
-    font-size: 12px;
-    color: #313131;
-}
-
-/* Responsive Reseñas */
-@media (max-width: 992px) {
-    .resenias-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .section-resenias { padding: 20px 15px; }
-    .section-resenias h2 { font-size: 26px; }
-    .resenias-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-}
 
 /* ===============================
    DARK MODE
