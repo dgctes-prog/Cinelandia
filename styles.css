@@ -6,16 +6,6 @@
 /* Google Fonts - Fuente principal del proyecto */
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-/*===:root{
-
-    --text:#222;
-
-    --header:#ffffff;
-
-    --card:#ffffff;
-
-}===*/
-
 :root {
     --bg: #ffffff;
     --surface: #f8f9fa;
