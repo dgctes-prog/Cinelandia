@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Cinelandia">
+    <meta property="og:image" content="img/hero_banner_image.png">
+    <meta name="description" content="Cinelandia. Descubrí películas, series y noticias del mundo del cine.">
     <title>Cinelandia - Noticias</title>
     <!-- Font Awesome: librería de íconos -->
-    <!--<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" -->
-    <script src="https://kit.fontawesome.com/3f798b4688.js" crossorigin="anonymous"></script>
-    <!-- Hoja de estilos principal -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="img/logo_cinelandia.png">
+    <!-- Estilos específicos de la página de contacto -->
     <link rel="stylesheet" href="noticias.css">
 </head>
 
@@ -18,25 +22,25 @@
     <!-- ==================== HEADER ==================== -->
     <!-- Barra de navegación fija en la parte superior -->
     <header class="header">
-        <a href="../index.html">
+        <a href="index.html">
             <img src="../img/logo_cinelandia.png" class="logo" alt="Logo Cinelandia" width="40px" height="40px">
         </a>
         <div>
             <ul id="navbar" class="navbar">
               <li><a href="../index.html">Home</a></li>
-              <li><a href="../buscador/buscador.html">Buscador</a></li>
               <li><a href="../pelis/pelis.html">Pelis</a></li>
               <li><a href="../series/series.html">Series</a></li>
-              <li><a href="noticias.html">Noticias</a></li>
+              <li><a class="active" href="../noticias/noticias.html">Noticias</a></li>
               <li><a href="../contacto/contacto.html">Contacto</a></li>
             </ul>
         </div>
+            <button id="darkModeBtn" class="dark-btn" aria-label="Modo oscuro">🌙</button>
         <!-- Versión mobile: ícono hamburguesa -->
         <div class="mobile">
             <a href="pages/carrito.html">
                 <i class="fa fa-shopping-bag" aria-hidden="true"></i>
             </a>
-            <i id="bar" class="fas fa-outdent"></i>
+            <i id="bar" class="fas fa-bars"></i>
         </div>
     </header>
 

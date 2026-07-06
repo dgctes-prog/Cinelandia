@@ -1,10 +1,71 @@
 /* ============================================================
    ESTILOS GENERALES
-   Fuente, reset de márgenes, paddings y tamaños base
+   Fuente, reset de márgenes, modo oscuro, paddings y tamaños base
    ============================================================ */
 
 /* Google Fonts - Fuente principal del proyecto */
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+    --bg: #ffffff;
+    --surface: #f8f9fa;
+    --header: #ffffff;
+    --text: #222222;
+    --text-secondary: #555555;
+    --primary: #088178;
+    --accent: #ad9112;
+    --border: #dcdcdc;
+    --contact-name:#000000;
+    --contact-text:#555555;
+}
+
+body.dark {
+    --bg: #121212;
+    --surface: #1e1e1e;
+    --header: #1b1b1b;
+    --text: #f4f4f4;
+    --text-secondary: #c0c0c0;
+    --primary: #26a69a;
+    --accent: #d4af37;
+    --border: #444444;
+    --contact-name:#ffffff;
+    --contact-text:#d0d0d0;
+}
+
+
+/* ===============================
+BOTÓN MODO OSCURO
+================================ */
+
+.dark-btn{
+    margin-left:20px;
+    padding:8px 12px;
+    border-radius:6px;
+    border:2px solid #088178;
+    background:white;
+    color:#088178;
+    cursor:pointer;
+    transition:.3s;
+    font-size:18px;
+}
+
+.dark-btn:hover{
+
+    background:#088178;
+    color:white;
+}
+
+body{
+width:100%;
+background:var(--bg);
+color:var(--text);
+}
+.header{
+    background:var(--header);
+}
+.newsletter{
+    background:var(--newsletter);
+}
 
 /* Reset general: elimina márgenes y paddings por defecto del navegador */
 * {
@@ -22,18 +83,18 @@ html {
 h1 {
     font-size: 50px;
     line-height: 64px;
-    color: #222;
+    color: var(--text);
 }
 
 h2 {
     font-size: 36px;
     line-height: 54px;
-    color: #222;
+    color: var(--text);
 }
 
 h4 {
     font-size: 20px;
-    color: #222;
+    color: var(--text);
 }
 
 h6 {
@@ -43,13 +104,10 @@ h6 {
 
 p {
     font-size: 16px;
-    color: #465b52;
+    color: var(--text);
     margin: 15px 0 20px 0;
 }
 
-body {
-    width: 100%;
-}
 
 /* Clases utilitarias de espaciado reutilizadas en varias secciones */
 .section-p1 {
@@ -76,7 +134,6 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 20px 80px;
-    background-color: #000000;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     /* El header queda fijo en la parte superior al hacer scroll */
     z-index: 999;
@@ -97,11 +154,16 @@ body {
     padding: 0 20px;
 }
 
+.navbar a.active {
+    color:#088178;
+    border-bottom:2px solid #088178;
+}
+
 .navbar a {
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
-    color: #ffffff;
+    color:var(--header-text);
     transition: 0.3s ease;
 }
 
@@ -175,7 +237,7 @@ body {
    ============================================================ */
 
 .hero {
-    background-image: url('/Pre-entrega-Front/img/hero_banner_image.png');
+    background-image: url('img/hero_banner_image.png');
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -264,7 +326,7 @@ body {
     .hero .hero-content h1 { font-size: 2.2rem; }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
     .hero { height: 60vh; padding: 0 20px; background-position: 55% center; }
     .hero .hero-content { width: 100%; }
     .hero .hero-content h4 { font-size: 0.8rem; }
@@ -555,7 +617,7 @@ body {
     .newsletter .newstext { margin-bottom: 20px; width: 100%; }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
     .newsletter { padding: 20px 10px; }
     .newsletter h4 { font-size: 18px; }
     .newsletter .form { width: 100%; }
@@ -641,7 +703,7 @@ footer .copyright {
     footer .copyright { margin-top: 20px; }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
     footer { flex-direction: column; }
     footer .col { width: 100%; margin-bottom: 30px; }
     footer .copyright { margin-top: 10px; font-size: 13px; }
@@ -746,11 +808,51 @@ footer .copyright {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
     .section-resenias { padding: 20px 15px; }
     .section-resenias h2 { font-size: 26px; }
     .resenias-container {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+}
+
+/* ===============================
+   DARK MODE
+================================ */
+
+body.dark{
+
+    --bg:#121212;
+    --text:#f4f4f4;
+    --header:#1b1b1b;
+    --card:#232323;
+    --newsletter:#181818;
+
+}
+
+body.dark input,
+body.dark textarea{
+
+    background:#2d2d2d;
+    color:white;
+    border:1px solid #555;
+}
+
+body.dark footer{
+    background:#1b1b1b;
+}
+
+body.dark .form-details{
+    background:#181818;
+}
+
+body.dark a{
+    color:white;
+}
+
+body.dark .dark-btn{
+    background:#333;
+    color:white;
+    border-color:#888;
 }
